@@ -1,0 +1,19 @@
+#include<reg51.h>
+#include"LCD8bit.h"
+main()
+{
+	char i;
+	lcd_init();
+	lcd_cmd(0xC);
+	for(i=0;i<5;i++)
+	{
+	lcd_cmd(0x80);
+	lcd_string("Satish");
+	lcd_cmd(0xC0);
+	lcd_string("Patil");
+  delay_ms(1000);
+	lcd_cmd(0x01);
+	delay_ms(1000);
+	}
+	while(1);
+}

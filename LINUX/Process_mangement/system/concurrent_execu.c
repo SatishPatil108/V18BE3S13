@@ -1,0 +1,15 @@
+#include"header.h"
+main()
+{
+    printf("Hello...\n");
+    if(fork()==0)
+    {
+        system("ls");
+    }
+    else
+    {
+        system("pwd");
+    }
+    printf("hai...\n");
+    while(1);
+}

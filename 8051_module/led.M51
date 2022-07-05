@@ -1,0 +1,143 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        12/01/2018  18:24:24  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE led.obj, led1.obj TO led RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  led.obj (LED)
+  led1.obj (LED1)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  led (LED)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0019H     UNIT         ?PR?_DELAY_MS?LED
+            CODE    001CH     0019H     UNIT         ?PR?_DELAY_MS?LED1
+            CODE    0035H     0014H     UNIT         ?PR?MAIN?LED
+            CODE    0049H     0012H     UNIT         ?PR?MAIN?LED1
+            CODE    005BH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   led (LED)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?LED
+
+?PR?MAIN?LED
+  +--> ?PR?_DELAY_MS?LED
+
+
+
+IGNORED SYMBOLS:
+   MAIN
+   _DELAY_MS
+
+
+
+SYMBOL TABLE OF MODULE:  led (LED)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/01/2018  18:24:24  PAGE 2
+
+
+  -------         MODULE        LED
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:0035H         PUBLIC        main
+  C:0003H         PUBLIC        _delay_ms
+  B:00A0H.0       PUBLIC        LED
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        ms
+  -------         DO            
+  D:0005H         SYMBOL        i
+  -------         ENDDO         
+  C:0003H         LINE#         1
+  C:0003H         LINE#         2
+  C:0003H         LINE#         4
+  C:000CH         LINE#         5
+  C:000CH         LINE#         6
+  C:0010H         LINE#         7
+  C:0014H         LINE#         8
+  C:001BH         LINE#         9
+  -------         ENDPROC       _DELAY_MS
+  -------         PROC          MAIN
+  C:0035H         LINE#         4
+  C:0035H         LINE#         5
+  C:0035H         LINE#         6
+  C:0035H         LINE#         7
+  C:0035H         LINE#         8
+  C:0037H         LINE#         9
+  C:003EH         LINE#         10
+  C:0040H         LINE#         11
+  C:0047H         LINE#         12
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        LED
+
+  -------         MODULE        LED1
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:0049H         PUBLIC        main
+  C:001CH         PUBLIC        _delay_ms
+  B:00A0H.0       PUBLIC        LED
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        ms
+  -------         DO            
+  D:0005H         SYMBOL        i
+  -------         ENDDO         
+  C:001CH         LINE#         1
+  C:001CH         LINE#         2
+  C:001CH         LINE#         4
+  C:0025H         LINE#         5
+  C:0025H         LINE#         6
+  C:0029H         LINE#         7
+  C:002DH         LINE#         8
+  C:0034H         LINE#         9
+  -------         ENDPROC       _DELAY_MS
+  -------         PROC          MAIN
+  C:0049H         LINE#         4
+  C:0049H         LINE#         5
+  C:0049H         LINE#         6
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/01/2018  18:24:24  PAGE 3
+
+
+  C:004BH         LINE#         7
+  C:0052H         LINE#         8
+  C:0054H         LINE#         9
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        LED1
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MAIN
+    MODULE:  led1.obj (LED1)
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAY_MS
+    MODULE:  led1.obj (LED1)
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MAIN?LED1
+
+Program Size: data=9.0 xdata=0 code=103
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  2 ERROR(S)

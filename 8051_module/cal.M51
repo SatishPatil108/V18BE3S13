@@ -1,0 +1,131 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        12/17/2018  19:09:26  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE uart1.obj TO cal RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  uart1.obj (UART1)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?ICASE)
+
+
+LINK MAP OF MODULE:  cal (UART1)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0032H     UNIT         ?PR?_UART_INIT?UART1
+            CODE    0035H     002DH     UNIT         ?C?LIB_CODE
+            CODE    0062H     000EH     UNIT         ?PR?MAIN?UART1
+            CODE    0070H     000CH     UNIT         ?C_C51STARTUP
+            CODE    007CH     0008H     UNIT         ?PR?_UART_TX?UART1
+            CODE    0084H     0008H     UNIT         ?PR?UART_RX?UART1
+
+
+
+OVERLAY MAP OF MODULE:   cal (UART1)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?UART1
+
+?PR?MAIN?UART1
+  +--> ?PR?_UART_INIT?UART1
+  +--> ?PR?_UART_TX?UART1
+
+
+
+SYMBOL TABLE OF MODULE:  cal (UART1)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        UART1
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0084H         PUBLIC        uart_rx
+  C:007CH         PUBLIC        _uart_tx
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/17/2018  19:09:26  PAGE 2
+
+
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  C:0062H         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:008DH         PUBLIC        TH1
+  C:0003H         PUBLIC        _uart_init
+  B:0088H.6       PUBLIC        TR1
+  -------         PROC          _UART_INIT
+  D:0006H         SYMBOL        baud
+  C:0003H         LINE#         1
+  C:0003H         LINE#         2
+  C:0003H         LINE#         3
+  C:0006H         LINE#         4
+  C:0009H         LINE#         5
+  C:0023H         LINE#         6
+  C:0023H         LINE#         7
+  C:0026H         LINE#         8
+  C:0028H         LINE#         9
+  C:0028H         LINE#         10
+  C:002AH         LINE#         11
+  C:002DH         LINE#         12
+  C:002FH         LINE#         13
+  C:0032H         LINE#         14
+  C:0032H         LINE#         15
+  C:0032H         LINE#         16
+  C:0034H         LINE#         17
+  -------         ENDPROC       _UART_INIT
+  -------         PROC          _UART_TX
+  D:0007H         SYMBOL        ch
+  C:007CH         LINE#         18
+  C:007CH         LINE#         19
+  C:007CH         LINE#         20
+  C:007EH         LINE#         21
+  C:0081H         LINE#         22
+  C:0083H         LINE#         23
+  -------         ENDPROC       _UART_TX
+  -------         PROC          UART_RX
+  C:0084H         LINE#         24
+  C:0084H         LINE#         25
+  C:0084H         LINE#         26
+  C:0087H         LINE#         27
+  C:0089H         LINE#         28
+  C:008BH         LINE#         29
+  -------         ENDPROC       UART_RX
+  -------         PROC          MAIN
+  C:0062H         LINE#         3
+  C:0062H         LINE#         4
+  C:0062H         LINE#         5
+  C:0069H         LINE#         6
+  C:006EH         LINE#         7
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        UART1
+
+  -------         MODULE        ?C?ICASE
+  C:0035H         PUBLIC        ?C?ICASE
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/17/2018  19:09:26  PAGE 3
+
+
+  -------         ENDMOD        ?C?ICASE
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_RX?UART1
+
+Program Size: data=9.0 xdata=0 code=140
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

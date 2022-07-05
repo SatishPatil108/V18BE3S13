@@ -1,0 +1,36 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        11/23/2018  12:25:31  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL4\C51\BIN\BL51.EXE P2.obj TO pratice RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  P2.obj (P2)
+
+
+LINK MAP OF MODULE:  pratice (P2)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  pratice (P2)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        P2
+  C:0000H         LINE#         2
+  -------         ENDMOD        P2
+
+Program Size: data=8.0 xdata=0 code=3
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

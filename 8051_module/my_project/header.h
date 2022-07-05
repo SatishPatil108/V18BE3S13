@@ -1,0 +1,14 @@
+#include<reg51.h>
+#include<stdio.h>
+#include"delay.h"
+#include"UART.h"
+#include"i2c.h"
+#include"i2c_device.h"
+#include"LCD8bit.h"
+#include"RTC.h"
+#include"TEMP.h"
+#include"SET_TEMP.h"
+#include"ADC.h"
+#include"temp_read.h"
+#include"LDR_read.h"
+#include"Read_EEPROM.h"

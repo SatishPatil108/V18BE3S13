@@ -1,0 +1,3 @@
+  CSEG AT 0H
+  MOV DPTR ,#0X1234
+  END

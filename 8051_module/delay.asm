@@ -1,0 +1,6 @@
+	CSEG AT 0H
+	MOV R0,#250
+	DJNZ R0,$
+	MOV R0,#249
+	DJNZ R0,$
+	END

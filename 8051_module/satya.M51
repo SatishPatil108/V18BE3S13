@@ -1,0 +1,167 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        12/07/2018  10:41:02  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE pratice_lcd1.obj TO satya RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  pratice_lcd1.obj (PRATICE_LCD1)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+
+
+LINK MAP OF MODULE:  satya (PRATICE_LCD1)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0003H     UNIT         _DATA_GROUP_
+            IDATA   000BH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0025H     UNIT         ?PR?_LCD_STRING?PRATICE_LCD1
+            CODE    0028H     0021H     UNIT         ?PR?_DELAY_MS?PRATICE_LCD1
+            CODE    0049H     0021H     UNIT         ?PR?MAIN?PRATICE_LCD1
+            CODE    006AH     0019H     UNIT         ?PR?LCD_INIT?PRATICE_LCD1
+            CODE    0083H     0019H     UNIT         ?C?LIB_CODE
+            CODE    009CH     000DH     UNIT         ?CO?PRATICE_LCD1
+            CODE    00A9H     000CH     UNIT         ?C_C51STARTUP
+            CODE    00B5H     000AH     UNIT         ?PR?_LCD_CMD?PRATICE_LCD1
+            CODE    00BFH     000AH     UNIT         ?PR?_LCD_DATA?PRATICE_LCD1
+
+
+
+OVERLAY MAP OF MODULE:   satya (PRATICE_LCD1)
+
+
+SEGMENT                                DATA_GROUP 
+  +--> CALLED SEGMENT                START    LENGTH
+----------------------------------------------------
+?C_C51STARTUP                        -----    -----
+  +--> ?PR?MAIN?PRATICE_LCD1
+
+?PR?MAIN?PRATICE_LCD1                -----    -----
+  +--> ?PR?_LCD_CMD?PRATICE_LCD1
+  +--> ?CO?PRATICE_LCD1
+  +--> ?PR?_LCD_STRING?PRATICE_LCD1
+
+?PR?_LCD_CMD?PRATICE_LCD1            -----    -----
+  +--> ?PR?_DELAY_MS?PRATICE_LCD1
+
+?PR?_LCD_STRING?PRATICE_LCD1         0008H    0003H
+  +--> ?PR?_LCD_DATA?PRATICE_LCD1
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/07/2018  10:41:02  PAGE 2
+
+
+?PR?_LCD_DATA?PRATICE_LCD1           -----    -----
+  +--> ?PR?_DELAY_MS?PRATICE_LCD1
+
+
+
+SYMBOL TABLE OF MODULE:  satya (PRATICE_LCD1)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        PRATICE_LCD1
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00B0H         PUBLIC        P3
+  B:00B0H.6       PUBLIC        EN
+  B:00B0H.4       PUBLIC        RS
+  C:0049H         PUBLIC        main
+  B:00B0H.5       PUBLIC        RW
+  C:0003H         PUBLIC        _lcd_string
+  C:00BFH         PUBLIC        _lcd_data
+  C:00B5H         PUBLIC        _lcd_cmd
+  C:006AH         PUBLIC        lcd_init
+  D:0080H         PUBLIC        LCD
+  C:0030H         PUBLIC        _delay_ms
+  -------         PROC          L?0020
+  -------         ENDPROC       L?0020
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        ms
+  -------         DO            
+  D:0005H         SYMBOL        i
+  -------         ENDDO         
+  C:0030H         LINE#         1
+  C:0030H         LINE#         2
+  C:0030H         LINE#         4
+  C:0039H         LINE#         5
+  C:0039H         LINE#         6
+  C:003DH         LINE#         7
+  C:0041H         LINE#         8
+  C:0048H         LINE#         9
+  -------         ENDPROC       _DELAY_MS
+  -------         PROC          _LCD_CMD
+  D:0007H         SYMBOL        cmd
+  C:00B5H         LINE#         7
+  C:00B5H         LINE#         8
+  C:00B5H         LINE#         9
+  C:00B7H         LINE#         10
+  C:00B9H         LINE#         11
+  C:00B9H         LINE#         12
+  C:00B9H         LINE#         13
+  C:00BCH         LINE#         14
+  C:00BEH         LINE#         15
+  -------         ENDPROC       _LCD_CMD
+  -------         PROC          _LCD_DATA
+  D:0007H         SYMBOL        dat
+  C:00BFH         LINE#         17
+  C:00BFH         LINE#         18
+  C:00BFH         LINE#         19
+  C:00C1H         LINE#         20
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/07/2018  10:41:02  PAGE 3
+
+
+  C:00C3H         LINE#         21
+  C:00C3H         LINE#         22
+  C:00C3H         LINE#         23
+  C:00C6H         LINE#         24
+  C:00C8H         LINE#         25
+  -------         ENDPROC       _LCD_DATA
+  -------         PROC          LCD_INIT
+  C:006AH         LINE#         26
+  C:006AH         LINE#         27
+  C:006AH         LINE#         28
+  C:006FH         LINE#         29
+  C:0074H         LINE#         30
+  C:0079H         LINE#         31
+  C:007EH         LINE#         32
+  -------         ENDPROC       LCD_INIT
+  -------         PROC          _LCD_STRING
+  D:0008H         SYMBOL        s
+  C:0003H         LINE#         35
+  C:0009H         LINE#         36
+  C:0009H         LINE#         37
+  C:0014H         LINE#         38
+  C:0027H         LINE#         39
+  -------         ENDPROC       _LCD_STRING
+  -------         PROC          MAIN
+  C:0049H         LINE#         3
+  C:0049H         LINE#         4
+  C:0049H         LINE#         5
+  C:004EH         LINE#         6
+  C:0057H         LINE#         7
+  C:005CH         LINE#         8
+  C:0065H         LINE#         9
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        PRATICE_LCD1
+
+  -------         MODULE        ?C?CLDPTR
+  C:0083H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_INIT?PRATICE_LCD1
+
+Program Size: data=12.0 xdata=0 code=201
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

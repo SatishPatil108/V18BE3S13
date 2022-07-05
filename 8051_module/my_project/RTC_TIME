@@ -1,0 +1,42 @@
+void my_RTC_settime(void)
+{
+  unsigned chat temp;
+  unsigned int temp1;
+  uart_string("Set the TIME - HH:MM:SS -");
+  while(1)
+  {
+    ch=uart_rx();
+	if(ch=='\r')
+	break;
+	temp=temp*10+ch-48;
+  }
+  uart_data(':');
+  temp1=(temp%10+(temp/10)*16);
+  i2c_device(0xD0,0x2,temp1);
+  temp=temp1=0;
+  
+  while(1)
+  {
+    ch=uart_rx();
+	if(ch=='\r')
+	break;
+	temp=temp*10+ch-48;
+  }
+  uart_data(':');
+  temp1=(temp%10+(temp/10)*16);
+  i2c_device(0xD0,0x1,temp1);
+  temp=temp1=0;
+  
+  while(1)
+  {
+    ch=uart_rx();
+	if(ch=='\r')
+	break;
+	temp=temp*10+ch-48;
+  }
+  temp1=(temp%10+(temp/10)*16);
+  i2c_device(0xD0,0x2,temp1);
+  temp=temp1=0;
+}
+  
+  

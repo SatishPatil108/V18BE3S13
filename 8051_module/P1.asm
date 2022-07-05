@@ -1,0 +1,5 @@
+ CSEG AT 0H
+ MOV R0,#0x10
+ MOV R1,#0X20
+ MOV R2,#0x30
+ END

@@ -1,0 +1,9 @@
+#include<reg51.h>
+#include"LCD8bit.h"
+main()
+{
+  lcd_init();
+	lcd_cmd(0xC);
+	lcd_float(12.34);
+	while(1);
+}

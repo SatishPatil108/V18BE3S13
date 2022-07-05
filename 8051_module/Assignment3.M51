@@ -1,0 +1,264 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        12/18/2018  20:39:39  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL4\C51\BIN\BL51.EXE Assignment3_UART.obj TO Assignment3 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  Assignment3_UART.obj (ASSIGNMENT3_UART)
+  C:\KEIL4\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL4\C51\LIB\C51S.LIB (?C?COPY)
+  C:\KEIL4\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL4\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL4\C51\LIB\C51S.LIB (?C?ICASE)
+
+
+LINK MAP OF MODULE:  Assignment3 (ASSIGNMENT3_UART)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0015H     UNIT         _DATA_GROUP_
+            IDATA   001DH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0169H     UNIT         ?C?LIB_CODE
+            CODE    016CH     00D7H     UNIT         ?PR?MAIN?ASSIGNMENT3_UART
+            CODE    0243H     0064H     UNIT         ?PR?_LCD_MYSTRCMP?ASSIGNMENT3_UART
+            CODE    02A7H     005FH     UNIT         ?CO?ASSIGNMENT3_UART
+            CODE    0306H     0032H     UNIT         ?PR?_UART_INIT?ASSIGNMENT3_UART
+            CODE    0338H     0025H     UNIT         ?PR?_UART_STRING?ASSIGNMENT3_UART
+            CODE    035DH     0019H     UNIT         ?PR?_DELAY_MS?ASSIGNMENT3_UART
+            CODE    0376H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0382H     0008H     UNIT         ?PR?_UART_TX?ASSIGNMENT3_UART
+            CODE    038AH     0008H     UNIT         ?PR?UART_RX?ASSIGNMENT3_UART
+
+
+
+OVERLAY MAP OF MODULE:   Assignment3 (ASSIGNMENT3_UART)
+
+
+SEGMENT                                      DATA_GROUP 
+  +--> CALLED SEGMENT                      START    LENGTH
+----------------------------------------------------------
+?C_C51STARTUP                              -----    -----
+  +--> ?PR?MAIN?ASSIGNMENT3_UART
+
+?PR?MAIN?ASSIGNMENT3_UART                  0008H    000FH
+  +--> ?CO?ASSIGNMENT3_UART
+  +--> ?PR?_UART_INIT?ASSIGNMENT3_UART
+  +--> ?PR?_UART_STRING?ASSIGNMENT3_UART
+  +--> ?PR?UART_RX?ASSIGNMENT3_UART
+  +--> ?PR?_UART_TX?ASSIGNMENT3_UART
+  +--> ?PR?_DELAY_MS?ASSIGNMENT3_UART
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/18/2018  20:39:39  PAGE 2
+
+
+  +--> ?PR?_LCD_MYSTRCMP?ASSIGNMENT3_UART
+
+?PR?_UART_STRING?ASSIGNMENT3_UART          0017H    0003H
+  +--> ?PR?_UART_TX?ASSIGNMENT3_UART
+
+?PR?_LCD_MYSTRCMP?ASSIGNMENT3_UART         0017H    0006H
+
+
+
+SYMBOL TABLE OF MODULE:  Assignment3 (ASSIGNMENT3_UART)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ASSIGNMENT3_UART
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:038AH         PUBLIC        uart_rx
+  C:0382H         PUBLIC        _uart_tx
+  C:0243H         PUBLIC        _lcd_mystrcmp
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  C:016CH         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  C:0338H         PUBLIC        _uart_string
+  C:0301H         SYMBOL        _?ix1000
+  D:008DH         PUBLIC        TH1
+  C:035DH         PUBLIC        _delay_ms
+  C:0306H         PUBLIC        _uart_init
+  B:0088H.6       PUBLIC        TR1
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        ms
+  -------         DO            
+  D:0005H         SYMBOL        i
+  -------         ENDDO         
+  C:035DH         LINE#         1
+  C:035DH         LINE#         2
+  C:035DH         LINE#         4
+  C:0366H         LINE#         5
+  C:0366H         LINE#         6
+  C:036AH         LINE#         7
+  C:036EH         LINE#         8
+  C:0375H         LINE#         9
+  -------         ENDPROC       _DELAY_MS
+  -------         PROC          _UART_INIT
+  D:0006H         SYMBOL        baud
+  C:0306H         LINE#         1
+  C:0306H         LINE#         2
+  C:0306H         LINE#         3
+  C:0309H         LINE#         4
+  C:030CH         LINE#         5
+  C:0326H         LINE#         6
+  C:0326H         LINE#         7
+  C:0329H         LINE#         8
+  C:032BH         LINE#         9
+  C:032BH         LINE#         10
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/18/2018  20:39:39  PAGE 3
+
+
+  C:032DH         LINE#         11
+  C:0330H         LINE#         12
+  C:0332H         LINE#         13
+  C:0335H         LINE#         14
+  C:0335H         LINE#         15
+  C:0335H         LINE#         16
+  C:0337H         LINE#         17
+  -------         ENDPROC       _UART_INIT
+  -------         PROC          _UART_TX
+  D:0007H         SYMBOL        ch
+  C:0382H         LINE#         18
+  C:0382H         LINE#         19
+  C:0382H         LINE#         20
+  C:0384H         LINE#         21
+  C:0387H         LINE#         22
+  C:0389H         LINE#         23
+  -------         ENDPROC       _UART_TX
+  -------         PROC          UART_RX
+  C:038AH         LINE#         24
+  C:038AH         LINE#         25
+  C:038AH         LINE#         26
+  C:038DH         LINE#         27
+  C:038FH         LINE#         28
+  C:0391H         LINE#         29
+  -------         ENDPROC       UART_RX
+  -------         PROC          _UART_STRING
+  D:0017H         SYMBOL        s
+  C:0338H         LINE#         30
+  C:033EH         LINE#         31
+  C:033EH         LINE#         32
+  C:0349H         LINE#         33
+  C:0349H         LINE#         34
+  C:035AH         LINE#         35
+  C:035CH         LINE#         36
+  -------         ENDPROC       _UART_STRING
+  -------         PROC          _LCD_MYSTRCMP
+  D:0017H         SYMBOL        p
+  D:001AH         SYMBOL        q
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0243H         LINE#         1
+  C:0249H         LINE#         2
+  C:0249H         LINE#         3
+  C:024CH         LINE#         4
+  C:025BH         LINE#         5
+  C:025BH         LINE#         6
+  C:0279H         LINE#         7
+  C:0279H         LINE#         8
+  C:0280H         LINE#         9
+  C:029EH         LINE#         10
+  C:02A2H         LINE#         12
+  C:02A6H         LINE#         13
+  -------         ENDPROC       _LCD_MYSTRCMP
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        s1
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/18/2018  20:39:39  PAGE 4
+
+
+  D:000DH         SYMBOL        s2
+  D:0012H         SYMBOL        temp
+  D:0004H         SYMBOL        j
+  D:0013H         SYMBOL        k
+  D:0014H         SYMBOL        i
+  D:0015H         SYMBOL        m
+  D:0016H         SYMBOL        g
+  C:01EBH         SYMBOL        L2
+  C:0238H         SYMBOL        L1
+  -------         ENDDO         
+  C:016CH         LINE#         5
+  C:016CH         LINE#         6
+  C:016CH         LINE#         7
+  C:017FH         LINE#         8
+  C:018CH         LINE#         9
+  C:0193H         LINE#         10
+  C:0193H         LINE#         11
+  C:0193H         LINE#         12
+  C:019CH         LINE#         13
+  C:019EH         LINE#         14
+  C:019EH         LINE#         15
+  C:01A7H         LINE#         17
+  C:01B0H         LINE#         18
+  C:01B0H         LINE#         19
+  C:01B5H         LINE#         20
+  C:01B6H         LINE#         21
+  C:01BBH         LINE#         22
+  C:01C0H         LINE#         23
+  C:01C1H         LINE#         24
+  C:01C3H         LINE#         26
+  C:01C7H         LINE#         27
+  C:01C9H         LINE#         30
+  C:01C9H         LINE#         31
+  C:01CEH         LINE#         32
+  C:01D5H         LINE#         33
+  C:01DAH         LINE#         34
+  C:01DFH         LINE#         35
+  C:01DFH         LINE#         36
+  C:01E6H         LINE#         38
+  C:01EBH         LINE#         39
+  C:01EBH         LINE#         40
+  C:01F1H         LINE#         41
+  C:0203H         LINE#         43
+  C:020CH         LINE#         44
+  C:020CH         LINE#         45
+  C:020FH         LINE#         46
+  C:0218H         LINE#         47
+  C:0221H         LINE#         48
+  C:0224H         LINE#         50
+  C:0224H         LINE#         51
+  C:0226H         LINE#         52
+  C:022FH         LINE#         53
+  C:0238H         LINE#         54
+  C:0238H         LINE#         58
+  C:0238H         LINE#         59
+  C:0241H         LINE#         60
+  -------         ENDPROC       MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/18/2018  20:39:39  PAGE 5
+
+
+  -------         ENDMOD        ASSIGNMENT3_UART
+
+  -------         MODULE        ?C?COPY
+  C:00D3H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+  -------         MODULE        ?C?CLDPTR
+  C:00F9H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CLDOPTR
+  C:0112H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?ICASE
+  C:013FH         PUBLIC        ?C?ICASE
+  -------         ENDMOD        ?C?ICASE
+
+Program Size: data=30.0 xdata=0 code=914
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
