@@ -1,0 +1,9 @@
+#include"header.h"
+main()
+{
+    printf("Hello...\n");
+    system("pwd");
+    printf("hai...\n");
+    system("ls");
+    printf("BYE...\n");
+}
